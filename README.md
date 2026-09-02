@@ -1,7 +1,7 @@
 # chituan.github.io
 
 Personal academic website of Anh-Chi Tuan — PhD student in Statistics and Computer
-Science, Bocconi University. Live at <https://chituan.github.io>.
+Science, Bocconi University. Live at <https://chituan01.github.io>.
 
 Plain HTML and one stylesheet. No build step, no dependencies: GitHub Pages serves the
 root of `main` as-is, so a push is live in under a minute.
