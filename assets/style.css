@@ -1,0 +1,286 @@
+/* ------------------------------------------------------------------
+   chituan.github.io — one stylesheet for the whole site.
+   Classic academic: serif, single column, warm paper, navy accent.
+   No JavaScript, no web fonts, no external requests.
+------------------------------------------------------------------ */
+
+:root {
+  --bg:     #fdfcf9;
+  --text:   #1c1b19;
+  --muted:  #6b6862;
+  --accent: #14315c;
+  --rule:   #e3ded3;
+  --serif:  "Iowan Old Style", "Charter", "Palatino Linotype", Palatino,
+            "Book Antiqua", Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:     #17161b;
+    --text:   #e9e6e0;
+    --muted:  #9c968d;
+    --accent: #93b3de;
+    --rule:   #2d2b33;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0 auto;
+  max-width: 46rem;              /* ~720px */
+  padding: 3.5rem 1.75rem 4rem;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.65;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- links ---------- */
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.16em;
+}
+a:hover { text-decoration-thickness: 0.11em; }
+
+/* ---------- header + nav ---------- */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 3rem;
+}
+
+.site-name {
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  text-decoration: none;
+}
+.site-name:hover { color: var(--accent); }
+
+.site-nav a {
+  margin-left: 1.35rem;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 1rem;
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid transparent;
+}
+.site-nav a:first-child { margin-left: 0; }
+.site-nav a:hover { color: var(--text); }
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- headings ---------- */
+
+h1 {
+  font-size: 2.05rem;
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: 0.005em;
+  margin: 0 0 0.35rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.45;
+  margin: 0 0 2rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  margin: 2.75rem 0 0.75rem;
+}
+
+h3 {
+  font-size: 1.08rem;
+  font-weight: normal;
+  font-style: italic;
+  color: var(--text);
+  margin: 1.9rem 0 0.5rem;
+}
+
+p { margin: 0 0 1.15rem; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.75rem 0;
+}
+
+/* ---------- portrait ---------- */
+
+.portrait {
+  float: right;
+  width: 168px;
+  height: auto;
+  margin: 0.35rem 0 1.25rem 1.9rem;
+  border-radius: 2px;
+  filter: saturate(0.92);
+}
+
+/* ---------- interests line ---------- */
+
+.interests {
+  color: var(--muted);
+  font-size: 0.97rem;
+  line-height: 1.55;
+}
+.interests strong {
+  font-weight: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  color: var(--text);
+}
+
+/* ---------- contact block ---------- */
+
+.contact-lines {
+  margin: 0 0 1.1rem;
+  color: var(--text);
+}
+.contact-lines span {
+  display: block;
+  line-height: 1.5;
+}
+.contact-lines .label {
+  display: inline;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-right: 0.45em;
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42em;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.profile-links a:hover { border-bottom-color: var(--accent); }
+.profile-links svg {
+  width: 0.95em;
+  height: 0.95em;
+  flex: none;
+  vertical-align: middle;
+}
+
+/* ---------- news ---------- */
+
+.news { list-style: none; margin: 0; padding: 0; }
+.news li {
+  margin-bottom: 0.55rem;
+  padding-left: 6.2rem;
+  text-indent: -6.2rem;
+  line-height: 1.5;
+}
+.news .date {
+  display: inline-block;
+  width: 6.2rem;
+  text-indent: 0;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+/* ---------- entries: papers, theses, projects, courses ---------- */
+
+.entry { margin: 0 0 1.9rem; }
+.entry .title { display: block; }
+.entry .meta {
+  display: block;
+  color: var(--muted);
+  font-size: 0.97rem;
+  line-height: 1.5;
+}
+.entry p { margin: 0.4rem 0 0.5rem; }
+
+.tags { font-variant: small-caps; letter-spacing: 0.06em; font-size: 0.95rem; }
+.tags a { text-decoration: none; border-bottom: 1px solid var(--rule); }
+.tags a:hover { border-bottom-color: var(--accent); }
+.tags .sep { color: var(--muted); margin: 0 0.45em; }
+
+code {
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.86em;
+  background: color-mix(in srgb, var(--rule) 45%, transparent);
+  padding: 0.08em 0.3em;
+  border-radius: 2px;
+}
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  margin-top: 4.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.site-footer a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--rule); }
+.site-footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.site-footer .sep { margin: 0 0.5em; }
+
+/* ---------- narrow screens ---------- */
+
+@media (max-width: 640px) {
+  body { padding: 2.5rem 1.15rem 3rem; font-size: 17px; }
+
+  .site-header { display: block; }
+  .site-name { display: block; margin-bottom: 0.55rem; }
+  .site-nav a { margin: 0 1.15rem 0 0; }
+
+  h1 { font-size: 1.75rem; }
+
+  .portrait {
+    float: none;
+    display: block;
+    margin: 0 0 1.5rem;
+    width: 150px;
+  }
+
+  .news li { padding-left: 0; text-indent: 0; }
+  .news .date { display: block; width: auto; }
+}
+
+/* ---------- print ---------- */
+
+@media print {
+  body { max-width: none; color: #000; background: #fff; }
+  .site-nav, .profile-links { display: none; }
+  a { color: #000; }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Anh-Chi Tuan</title>
+<meta name="description" content="Research interests and projects of Anh-Chi Tuan: Bayesian nonparametrics, random partition models, spatio-temporal and areal data.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-name" href="index.html">Anh-Chi Tuan</a>
+  <nav class="site-nav">
+    <a href="index.html">About</a>
+    <a href="research.html" aria-current="page">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+    <!-- CV: uncomment once files/cv.pdf exists.
+    <a href="files/cv.pdf">CV</a>
+    -->
+  </nav>
+</header>
+
+<main>
+
+  <h1>Research</h1>
+  <p class="subtitle">Bayesian methods for structured and spatially dependent data.</p>
+
+  <h3>Learning structure instead of assuming it</h3>
+
+  <p>
+    Applied models usually fix the groups in advance — regions, sectors, cohorts — and
+    estimate within them. Random partition models turn that around: the grouping itself is
+    a parameter with a prior over partitions, so the posterior says both how many groups
+    the data support and which units belong together. I am interested in partition priors
+    that respect external structure, spatial contiguity above all, where the plausible
+    partitions are the ones that carve a map into connected regions.
+  </p>
+
+  <h3>Computation</h3>
+
+  <p>
+    Partition models are awkward to sample. The state space is discrete and enormous, and
+    naive Gibbs moves mix badly, which quietly limits how much model comparison anyone
+    actually does. Part of my work is practical: writing samplers in C++ that are fast
+    enough to make realistic simulation studies and model comparison possible.
+  </p>
+
+  <!-- PHD RESEARCH DIRECTION — to fill in later.
+       Two or three sentences on what you want to work on in the PhD. This is the
+       paragraph a seminar host or a prospective collaborator reads. Delete the comment
+       markers around the block below and replace the placeholder text.
+
+  <h3>[Working title of the direction]</h3>
+
+  <p>
+    [What question you want to answer, why it is open, and what you intend to bring to it.]
+  </p>
+
+  -->
+
+  <hr>
+
+  <h2>Projects</h2>
+
+  <div class="entry">
+    <span class="title">Bayesian spatio-temporal clustering of Italian provinces</span>
+    <span class="meta">Master's thesis, Politecnico di Milano, 2026</span>
+    <p>
+      A regression model over <em>I</em> provinces and <em>T</em> periods in which
+      provinces are randomly partitioned into clusters with cluster-specific coefficients,
+      under a spatial product-partition prior with a boundary-length penalty, alongside
+      Leroux-type CAR random effects. Estimation is a two-stage Gibbs procedure: sample
+      partitions, select the loss-optimal partition, then re-estimate the remaining
+      parameters conditional on it. Applied to female employment and early childhood
+      education and care provision across Italian provinces, 2018–2022.
+    </p>
+    <!-- Add links when the thesis and code are public:
+    <span class="tags"><a href="#">PDF</a><span class="sep">·</span><a href="#">Code</a><span class="sep">·</span><a href="#">Slides</a></span>
+    -->
+  </div>
+
+  <div class="entry">
+    <span class="title">Online learning for budgeted multi-campaign bidding</span>
+    <span class="meta">Course project, 2026</span>
+    <p>
+      Algorithms for bidding across several advertising campaigns under a single shared
+      budget and a conflict graph: UCB1 with and without the budget constraint,
+      Combinatorial-UCB, a primal-dual best-of-both-worlds method, and sliding-window and
+      change-detection variants for non-stationary environments.
+    </p>
+    <span class="tags"><a href="https://github.com/chituan01">Code</a></span>
+    <!-- TODO: point this at the specific repository once it is public. -->
+  </div>
+
+  <hr>
+
+  <p class="interests">
+    I release the code behind what I write, in a state where someone else can run it — the
+    <em>Code</em> links above go straight to the repositories. Day to day I work in R
+    (<code>Rcpp</code>, <code>RcppArmadillo</code>, <code>spdep</code>, <code>sf</code>,
+    <code>loo</code>), C++, Python (<code>numpy</code>, <code>pytorch</code>), LaTeX and
+    git.
+  </p>
+
+</main>
+
+<footer class="site-footer">
+  Anh-Chi Tuan <span class="sep">·</span>
+  <a href="mailto:anh.tuan@phd.unibocconi.it">anh.tuan@phd.unibocconi.it</a><br>
+  <a href="https://www.linkedin.com/in/chituan01/">LinkedIn</a><span class="sep">·</span>
+  <a href="https://github.com/chituan01">GitHub</a><span class="sep">·</span>
+  <a href="https://scholar.google.com/citations?user=8Gv-wrAAAAAJ&amp;hl=en">Google Scholar</a><span class="sep">·</span>
+  Last updated September 2026
+</footer>
+
+</body>
+</html>
